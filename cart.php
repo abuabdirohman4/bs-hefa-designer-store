@@ -1,3 +1,6 @@
+<?php
+    include('env.php');
+?>
 <!doctype html>
 <html lang="en">
 
@@ -58,11 +61,47 @@
               <h5 class="m-0">Jeans Papp</h5>
               <p class="m-0" style="color:#B7B7B7;">IDR 280.000.100</p>
             </div>
-            <div class="col-4">
+            <!-- <div class="col-4">
               <button type="button" class="btn btn-sm" style="background-color: #EAEAEF; color: white;"><i
                   class="fas fa-minus-circle"></i></button>
               <span class="mx-2">20</span>
               <button type="button" class="btn btn-sm btn-success" style="color: white;"><i
+                  class="fas fa-plus-circle"></i></button>
+            </div> -->
+            <div class="col-4">
+              <button type="button" class="btn btn-sm" style="background-color: #EAEAEF; color: white;" id="minus-btn1"><i
+                  class="fas fa-minus-circle"></i></button>
+              <!-- <span class="mx-2">20</span> -->
+              <input type="number" id="qty_input1" class="text-right" value="1" min="1" style="background-color: white;border: none;width: 22%;">
+              <button type="button" class="btn btn-sm btn-success" style="color: white;" id="plus-btn1"><i
+                  class="fas fa-plus-circle"></i></button>
+            </div>
+            <div class="col-2 text-right">
+              <button type="button" class="btn btn-sm btn-danger" style="color: white;"><i
+                  class="fas fa-times-circle"></i></button>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-2">
+              <img src="img/cart/item1.png">
+            </div>
+            <div class="col-4">
+              <h5 class="m-0">Jeans Papp</h5>
+              <p class="m-0" style="color:#B7B7B7;">IDR 280.000.100</p>
+            </div>
+            <!-- <div class="col-4">
+              <button type="button" class="btn btn-sm" style="background-color: #EAEAEF; color: white;"><i
+                  class="fas fa-minus-circle"></i></button>
+              <span class="mx-2">20</span>
+              <button type="button" class="btn btn-sm btn-success" style="color: white;"><i
+                  class="fas fa-plus-circle"></i></button>
+            </div> -->
+            <div class="col-4">
+              <button type="button" class="btn btn-sm" style="background-color: #EAEAEF; color: white;" id="minus-btn2"><i
+                  class="fas fa-minus-circle"></i></button>
+              <!-- <span class="mx-2">20</span> -->
+              <input type="number" id="qty_input2" class="text-right" value="1" min="1" style="background-color: white;border: none;width: 22%;">
+              <button type="button" class="btn btn-sm btn-success" style="color: white;" id="plus-btn2"><i
                   class="fas fa-plus-circle"></i></button>
             </div>
             <div class="col-2 text-right">
@@ -79,30 +118,11 @@
               <p class="m-0" style="color:#B7B7B7;">IDR 280.000.100</p>
             </div>
             <div class="col-4">
-              <button type="button" class="btn btn-sm" style="background-color: #EAEAEF; color: white;"><i
+              <button type="button" class="btn btn-sm" style="background-color: #EAEAEF; color: white;" id="minus-btn3"><i
                   class="fas fa-minus-circle"></i></button>
-              <span class="mx-2">20</span>
-              <button type="button" class="btn btn-sm btn-success" style="color: white;"><i
-                  class="fas fa-plus-circle"></i></button>
-            </div>
-            <div class="col-2 text-right">
-              <button type="button" class="btn btn-sm btn-danger" style="color: white;"><i
-                  class="fas fa-times-circle"></i></button>
-            </div>
-          </div>
-          <div class="row mb-4">
-            <div class="col-2">
-              <img src="img/cart/item1.png">
-            </div>
-            <div class="col-4">
-              <h5 class="m-0">Jeans Papp</h5>
-              <p class="m-0" style="color:#B7B7B7;">IDR 280.000.100</p>
-            </div>
-            <div class="col-4">
-              <button type="button" class="btn btn-sm" style="background-color: #EAEAEF; color: white;"><i
-                  class="fas fa-minus-circle"></i></button>
-              <span class="mx-2">20</span>
-              <button type="button" class="btn btn-sm btn-success" style="color: white;"><i
+              <!-- <span class="mx-2">20</span> -->
+              <input type="number" id="qty_input3" class="text-right" value="1" min="1" style="    background-color: white;border: none;width: 22%;">
+              <button type="button" class="btn btn-sm btn-success" style="color: white;" id="plus-btn3"><i
                   class="fas fa-plus-circle"></i></button>
             </div>
             <div class="col-2 text-right">
@@ -212,8 +232,10 @@
 
           <div class="row mt-3">
             <div class="col">
-              <button type="button" class="btn btn-block"
-                style="background-color: #EAEAEF; color: #ADADAD;">Cancel</button>
+              <a class="btn btn-block" href="<?= BASE_URL;?>"
+                style="background-color: #EAEAEF; color: #ADADAD;">Cancel</a>
+              <!-- <button type="button" class="btn btn-block" href="<?= BASE_URL;?>"
+                style="background-color: #EAEAEF; color: #ADADAD;">Cancel</button> -->
             </div>
             <div class="col">
               <button type="button" class="btn btn-warning btn-block text-white" data-toggle="modal"
@@ -229,7 +251,7 @@
 
 
   <!-- Modal -->
-  <div class="modal fade checkout-modal-success" id="checkoutModal" tabindex="-1" role="dialog"
+  <div class="modal fade checkout-modal-success row" id="checkoutModal" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -237,8 +259,14 @@
           <img src="img/cart/sukses_checkout.png" class="mb-5">
           <h3>Checkout Berhasil</h3>
           <p>Anda akan mendapatkan barang anda <br> dalam beberapa hari</p>
-          <button type="button" class="btn mt-3" style="background-color: #EAEAEF; color: #ADADAD;"
-            data-dismiss="modal">Home</button>
+          <!-- <button type="button" class="btn mt-3" style="background-color: #EAEAEF; color: #ADADAD;"
+            data-dismiss="modal">
+            Home
+          </button> -->
+          <a class="btn mt-3" style="background-color: #EAEAEF; color: #ADADAD;"
+            role="button" href="<?= BASE_URL;?>">
+            Home
+          </a>
         </div>
       </div>
     </div>
@@ -284,17 +312,50 @@
   </footer>
   <!-- Akhir Footer -->
 
-
-
-
-
-
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="js/all.js"></script>
+
+  <script>
+        $(document).ready(function(){
+            $('#qty_input1').prop('disabled', true);
+            $('#plus-btn1').click(function(){
+                $('#qty_input1').val(parseInt($('#qty_input1').val()) + 1 );
+            });
+            $('#minus-btn1').click(function(){
+                $('#qty_input1').val(parseInt($('#qty_input1').val()) - 1 );
+                if ($('#qty_input1').val() == 0) {
+                    $('#qty_input1').val(1);
+                }
+            });
+            
+            $('#qty_input2').prop('disabled', true);
+            $('#plus-btn2').click(function(){
+                $('#qty_input2').val(parseInt($('#qty_input2').val()) + 1 );
+            });
+            $('#minus-btn2').click(function(){
+                $('#qty_input2').val(parseInt($('#qty_input2').val()) - 1 );
+                if ($('#qty_input2').val() == 0) {
+                    $('#qty_input2').val(1);
+                }
+            });
+
+            $('#qty_input3').prop('disabled', true);
+            $('#plus-btn3').click(function(){
+                $('#qty_input3').val(parseInt($('#qty_input3').val()) + 1 );
+            });
+            $('#minus-btn3').click(function(){
+                $('#qty_input3').val(parseInt($('#qty_input3').val()) - 1 );
+                if ($('#qty_input3').val() == 0) {
+                    $('#qty_input3').val(1);
+                }
+            });
+        });
+  </script>
+
 </body>
 
 </html>

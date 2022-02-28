@@ -1,3 +1,7 @@
+<?php
+    include('env.php');
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -37,16 +41,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav text-uppercase mx-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="<?= BASE_URL;?>">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Category</a>
+            <a class="nav-link" href="<?= BASE_URL;?>">Category</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Designer</a>
+            <a class="nav-link" href="<?= BASE_URL;?>">Designer</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="<?= BASE_URL;?>">About</a>
           </li>
         </ul>
         <a href="" class="nav-link text-white"><i class="fas fa-shopping-cart"></i> My Cart (<span>12</span>)</a>
@@ -92,15 +96,16 @@
         <div class="col-lg-4">
           <h3>Jeans: Giordano XI</h3>
           <p class="text-muted">IDR 290.000.000</p>
-          <button type="button" class="btn btn-sm" style="background-color: #EAEAEF; color: white;"><i
+          <button type="button" class="btn btn-sm" style="background-color: #EAEAEF; color: white;" id="minus-btn"><i
               class="fas fa-minus-circle"></i></button>
-          <span class="mx-2">20</span>
-          <button type="button" class="btn btn-sm btn-success" style="color: white;"><i
+          <!-- <span class="mx-2">20</span> -->
+          <input type="number" id="qty_input" class="text-right" value="1" min="1" style="background-color: white;border: none;width: 10%;">
+          <button type="button" class="btn btn-sm btn-success" style="color: white;" id="plus-btn"><i
               class="fas fa-plus-circle"></i></button>
 
           <div class="btn-product">
-            <a href="" class="btn btn-warning text-white">Add to Cart</a>
-            <a href="" class="btn" style="background-color: #EAEAEF; color: #ADADAD;">Add to Wishlist</a>
+            <a href="<?= BASE_URL;?>/cart.php" class="btn btn-warning text-white">Add to Cart</a>
+            <a href="<?= BASE_URL;?>/cart.php" class="btn" style="background-color: #EAEAEF; color: #ADADAD;">Add to Wishlist</a>
           </div>
 
           <div class="designed-by">
@@ -318,17 +323,28 @@
   </footer>
   <!-- Akhir Footer -->
 
-
-
-
-
-
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="js/all.js"></script>
+
+  <script>
+        $(document).ready(function(){
+            $('#qty_input').prop('disabled', true);
+            $('#plus-btn').click(function(){
+                $('#qty_input').val(parseInt($('#qty_input').val()) + 1 );
+            });
+            $('#minus-btn').click(function(){
+                $('#qty_input').val(parseInt($('#qty_input').val()) - 1 );
+                if ($('#qty_input').val() == 0) {
+                    $('#qty_input').val(1);
+                }
+            });
+        });
+  </script>
+
 </body>
 
 </html>

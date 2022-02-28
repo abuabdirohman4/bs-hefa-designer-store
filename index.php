@@ -1,3 +1,6 @@
+<?php
+    include('env.php');
+?>
 <!doctype html>
 <html lang="en">
 
@@ -37,19 +40,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav text-uppercase mx-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="<?= BASE_URL;?>">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Category</a>
+            <a class="nav-link" href="<?= BASE_URL;?>">Category</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Designer</a>
+            <a class="nav-link" href="<?= BASE_URL;?>">Designer</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="<?= BASE_URL;?>">About</a>
           </li>
         </ul>
-        <a href="" class="nav-link text-white"><i class="fas fa-shopping-cart"></i> My Cart (<span>12</span>)</a>
+        <a href="<?= BASE_URL;?>/cart.php" class="nav-link text-white"><i class="fas fa-shopping-cart"></i> My Cart (<span>12</span>)</a>
       </div>
     </div>
   </nav>
@@ -66,7 +69,7 @@
             <div class="col-9 col-sm-4 col-md-6 col-lg-5">
               <h1 class="mb-4">Spesial Eid Lebaran</h1>
               <p class="mb-4">Jadikan hari pertama lebaranmu meriah dan memorable</p>
-              <a href="" class="btn btn-warning text-white">Get It Now</a>
+              <a href="<?= BASE_URL;?>/single.php" class="btn btn-warning text-white">Get It Now</a>
             </div>
             <div class="col-3 col-sm-6 col-md-4 col-lg-4 d-none d-sm-block offset-1">
               <img src="img/slideshow/1.png" class="img-fluid">
@@ -79,7 +82,7 @@
             <div class="col-9 col-sm-4 col-md-6 col-lg-5">
               <h1 class="mb-4">Spesial Eid Lebaran</h1>
               <p class="mb-4">Jadikan hari pertama lebaranmu meriah dan memorable</p>
-              <a href="" class="btn btn-warning text-white">Get It Now</a>
+              <a href="<?= BASE_URL;?>/single.php" class="btn btn-warning text-white">Get It Now</a>
             </div>
             <div class="col-3 col-sm-6 col-md-4 col-lg-4 d-none d-sm-block offset-1">
               <img src="img/slideshow/1.png" class="img-fluid">
@@ -91,7 +94,7 @@
             <div class="col-9 col-sm-4 col-md-6 col-lg-5">
               <h1 class="mb-4">Spesial Eid Lebaran</h1>
               <p class="mb-4">Jadikan hari pertama lebaranmu meriah dan memorable</p>
-              <a href="" class="btn btn-warning text-white">Get It Now</a>
+              <a href="<?= BASE_URL;?>/single.php" class="btn btn-warning text-white">Get It Now</a>
             </div>
             <div class="col-3 col-sm-6 col-md-4 col-lg-4 d-none d-sm-block offset-1">
               <img src="img/slideshow/1.png" class="img-fluid">
@@ -148,7 +151,7 @@
           <figure class="figure">
             <div class="figure-img">
               <img src="img/feature/3.png" class="figure-img img-fluid">
-              <a href="" class="d-flex justify-content-center">
+              <a href="<?= BASE_URL;?>/single.php" class="d-flex justify-content-center">
                 <img src="img/detail.png" class="align-self-center">
               </a>
             </div>
@@ -162,7 +165,7 @@
           <figure class="figure">
             <div class="figure-img">
               <img src="img/feature/1.png" class="figure-img img-fluid">
-              <a href="" class="d-flex justify-content-center">
+              <a href="<?= BASE_URL;?>/single.php" class="d-flex justify-content-center">
                 <img src="img/detail.png" class="align-self-center">
               </a>
             </div>
@@ -176,7 +179,7 @@
           <figure class="figure">
             <div class="figure-img">
               <img src="img/feature/2.png" class="figure-img img-fluid">
-              <a href="" class="d-flex justify-content-center">
+              <a href="<?= BASE_URL;?>/single.php" class="d-flex justify-content-center">
                 <img src="img/detail.png" class="align-self-center">
               </a>
             </div>
@@ -190,7 +193,7 @@
           <figure class="figure">
             <div class="figure-img">
               <img src="img/feature/3.png" class="figure-img img-fluid">
-              <a href="" class="d-flex justify-content-center">
+              <a href="<?= BASE_URL;?>/single.php" class="d-flex justify-content-center">
                 <img src="img/detail.png" class="align-self-center">
               </a>
             </div>
@@ -204,7 +207,7 @@
           <figure class="figure">
             <div class="figure-img">
               <img src="img/feature/1.png" class="figure-img img-fluid">
-              <a href="" class="d-flex justify-content-center">
+              <a href="<?= BASE_URL;?>/single.php" class="d-flex justify-content-center">
                 <img src="img/detail.png" class="align-self-center">
               </a>
             </div>
@@ -218,7 +221,7 @@
           <figure class="figure">
             <div class="figure-img">
               <img src="img/feature/2.png" class="figure-img img-fluid">
-              <a href="" class="d-flex justify-content-center">
+              <a href="<?= BASE_URL;?>/single.php" class="d-flex justify-content-center">
                 <img src="img/detail.png" class="align-self-center">
               </a>
             </div>
